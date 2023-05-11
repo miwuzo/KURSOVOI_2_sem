@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>регистрация</title>
+      <link rel="stylesheet" href="общее.css" media="screen">
+      <link rel="stylesheet" href="регистрация.css" media="screen">
+      <style>
+
+form{
+        margin-left: 35%;
+        margin-right: 50%;
+      }
+
+      @media (max-width: 991px ){
+        form{
+         margin-left: 30%;
+        }
+      }
+
+      @media (max-width: 767px ){
+        form{
+         margin-left: 25%;
+         margin-right: 45%;
+        }
+      }
+
+      @media (max-width: 576px ){
+        form{
+         margin-left: 15%;
+         margin-right: 52%;
+        }
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 3px;
+        margin-top: 11px;
+      }
+      input[type="email"],
+      input[type="text"] {
+        padding: 10px 50% 10px 50% ;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #adadad;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #000000 !important;
+        color: rgb(255, 255, 255);
+      }
+      .error {
+        color: rgb(255, 0, 0);
+        font-size: 12px;
+        margin-top: 5px;
+      }
+      .success {
+        color: green;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+      </style>
+   </head>
+   <body>
+      
+      <section class="section-1">
+         <div class="sheet sheet-1">
+            <a href='главная.html'><img class="logo image image-contain image-default image-1" src="картинки/логотип.svg" alt="" data-image-width="610" data-image-height="551" data-animation-name="pulse" data-animation-duration="1000" data-animation-direction=""></a>
+         </div>
+      </section>
+      <br>
+    <form id="contact-form">
+      <label for="email">Emai:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Сообщение:</label>
+      <input type="text" id="message" name="message" required></textarea>
+      <p><input type="submit" value="Отправить"></p>
+    
+    <div id="form-messages"></div>
+   </form>
+    <script>// Получаем элементы формы и сообщений на странице
+      const form = document.getElementById("contact-form");
+      const emailInput = document.getElementById("email");
+      const messageInput = document.getElementById("message");
+      const formMessages = document.getElementById("form-messages");
+      
+      // Функция проверки корректности email-адреса
+      function isValidEmail(email) {
+        // Используем регулярное выражение для проверки формата email-адреса
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+      
+      // Функция проверки заполненности текстового поля
+      function isValidMessage(message) {
+        // Проверяем, что сообщение не пустое и не состоит только из пробелов
+        return message.trim() !== "";
+      }
+      
+      // Вешаем обработчик отправки формы
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); // Отменяем стандартное поведение формы
+      
+        // Получаем значения полей ввода из формы
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+      
+        // Проверяем корректность email-адреса и заполненность текстового поля
+        if (!isValidEmail(email)) {
+          formMessages.innerHTML = '<p class="error">Пожалуйста, введите корректный адрес электронной почты</p>';
+          return;
+        }
+      
+        if (!isValidMessage(message)) {
+          formMessages.innerHTML = '<p class="error">Пожалуйста, введите сообщение</p>';
+          return;
+        }
+
+        if (isValidMessage(message) && isValidEmail(email)) {
+          formMessages.innerHTML = '<p class="success">Ожидайте ответа.</p>';
+          emailInput.value = "";
+              messageInput.value = "";
+        
+        }
+      });
+      </script>
+      
+       
+   </body>
+</html>

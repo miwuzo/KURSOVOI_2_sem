@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <title>купоны</title>
+    <link rel="stylesheet" href="общее.css" media="screen">
+    <link rel="stylesheet" href="купоны.css" media="screen">
+   </head>
+  <body>
+   <header class="header">
+      <div class="sheet sheet-1">
+         <img class="image-contain image-default image-1" src="картинки/логотип.svg">
+         <p class="log text-block text-1"><a href="sowi.html" style="text-decoration: none; color: black !important;">soweomi</a></p>
+         <nav class="menu men1">
+            <div>
+               <ul class="nav">
+                  <li class="nav-item"><a class="nav-link" href="главная.html" style="padding: 10px 20px;">ГЛАВНАЯ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="коты.html" style="padding: 10px 20px;">КОТЫ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="ошибка.html" style="padding: 10px 20px;">СОБАКИ</a></li>
+                  <li class="nav-item"><a class="nav-link" href="купоны.html" style="padding: 10px 20px;">АКЦИИ/КУПОНЫ</a></li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <span class="reg-icon icon icon-1">
+         <a href="регистрация.html"><img src="картинки/header.png"></a>
+      </span>
+   </header>
+ <div class="product-container">
+
+   <div class="product product-1">
+     <img src="картинки/уу.png" alt="Product 1">
+     <p class="price">-10% при покупке от 20 бел.руб </p>
+     <button class="get-button one">Получить</button>
+   </div>
+
+   <div class="product product-2">
+     <img src="картинки/уу.png" alt="Product 2">
+     <p class="price sec">-17% на новую продукцию</p>
+     <button class="get-button two">Недоступно</button>
+   </div>
+   
+ </div>
+ <script>
+   var button = document.querySelector('.get-button.one');
+   button.addEventListener('click', function() {
+     button.textContent = 'Приобретено';
+   });
+ </script>
+ 
+    
+ <footer class="footer">       
+   <div class="sheet layout-cell ">          
+      <div>                
+         <div class="position-1">
+           <h5>+375 44 538 86 10<br>
+               soweomi@gmail.com
+            </h5>
+            <div>
+               <br>г. Минск, ул. Белорусская 21<br>&#169; soweomi<br>
+            </div>
+         </div>
+      </div>
+   </div> 
+</footer>
+</body></html>

@@ -1,0 +1,58 @@
+
+
+.text-1 {
+    font-size: 4rem;
+    transition-duration: 0.3s;
+    transform: scale(1);
+    margin: 41px auto 0;
+}
+
+@media (max-width: 575px) {
+    .section-1 .text-1 {
+        font-size: 2.25rem;
+    }
+}
+
+.text-2 {
+    line-height: 0.8;
+    transition-duration: 0.5s;
+    transform: scale(1);
+    margin: 41px auto;
+}
+
+    .text-2:hover {
+        transform: scale(1.1);
+        color:rgba(85, 0, 116, 0.664);
+        text-decoration: underline;
+    }
+
+.section-1 .text-1:hover {
+    transform: scale(1.1);
+    color:rgba(85, 0, 116, 0.664);
+}
+
+.image-1 {
+    width: 623px;
+    height: 485px;
+    margin: 45px 218px 60px auto ;
+}
+
+@media (max-width: 1199px) {
+    .section-2 .image-1 {
+        margin-right: 122px;
+    }
+}
+
+@media (max-width: 991px) {
+    .section-2 .image-1 {
+        margin-right: -9px;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-2 .image-1 {
+        width: 340px;
+        height: 264px;
+        margin-left: 30px !important;
+    }
+}
